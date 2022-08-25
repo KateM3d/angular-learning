@@ -2,25 +2,30 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  // template: `<p>Hello World!here you are</p>`,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  // styles:['']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'Luis';
-  imgURL =
-    'https://i.picsum.photos/id/237/500/500.jpg?hmac=idOEkrJhLd7nEU5pNrAGCyJ6HHJdR_sit1qDt5J3Wo0';
+  serverElements = [
+    { type: 'server', name: 'test server', content: 'just a test' },
+  ];
 
-  getName() {
-    return this.name;
+  onServerAdded(serverData: { serverName: string; serverContent: string }) {
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent,
+    });
   }
 
-  changeImage(e: KeyboardEvent) {
-    this.imgURL = (e.target as HTMLInputElement).value;
-  }
-
-  logImg(event: string) {
-    console.log(event);
+  onBlueprintAdded(blueprintData: {
+    serverName: string;
+    serverContent: string;
+  }) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent,
+    });
   }
 }
