@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <app-component-one (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)"></app-component-one>
     <hr>
     <div class="row ">
@@ -11,4 +11,23 @@
             </app-component-two>
         </div>
     </div>
+</div> -->
+
+<div class="container">
+    <button (click)="onlyOdd=!onlyOdd">only odd numbers</button>
+    <hr>
+    <ul>
+        <div>
+            <div *ngIf="onlyOdd">
+                <li class="list-group-item" [ngClass]="{odd:oddNumber%2 !==0}" [ngStyle]="{backgroundColor: oddNumber%2 !==0 ?'yellow' : 'blue'}" *ngFor="let oddNumber of oddNumbers">{{oddNumber}}</li>
+            </div>
+            <div *ngIf="!onlyOdd">
+                <li class="list-group-item" *ngFor="let evenNumber of evenNumbers">{{evenNumber}}</li>
+            </div>
+
+        </div>
+    </ul>
+    <p appBasicHighlight>Style me with basic directive</p>
+    <p appBetterHighlight>Style me with basic directive</p>
+
 </div>
