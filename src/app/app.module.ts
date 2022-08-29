@@ -7,6 +7,7 @@ import { ComponentOneComponent } from './component-one/component-one.component';
 import { ComponentTwoComponent } from './component-two/component-two.component';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-directive/better-highlight.directive';
+import { UnlessDirective } from './unless-directive/unless.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BetterHighlightDirective } from './better-directive/better-highlight.di
     ComponentTwoComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
+    UnlessDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
